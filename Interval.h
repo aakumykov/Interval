@@ -8,13 +8,15 @@
 class Interval
 {
 	public:
-		Interval(unsigned long interval);
+		Interval(unsigned long interval, bool start_as_ready=true);
 		boolean ready();
 		unsigned long duration();
 
 	private:
-		unsigned long interval = 200;
-		unsigned long lastRead = 0;
+		unsigned long _interval;
+		unsigned long _lastRead = 0;
+		bool _ready;
+		bool _start_as_ready;
 };
 
 #endif
